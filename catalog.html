@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Каталог товарів - Ivan 3D Print</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Ivan 3D Print</h1>
+    <p>Каталог наших виробів</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Головна</a>
+    <a href="catalog.html" class="active">Каталог</a>
+    <a href="#">Контакти</a>
+  </nav>
+
+  <section class="catalog-info">
+    <h2>Усі вироби в одному місці</h2>
+    <p>Обирайте категорію або гортайте список наших найкращих робіт.</p>
+  </section>
+
+  <section class="products">
+    <div class="card">
+      <img src="images/bmw.jpg" alt="Маска для кішки">
+      <h3>Маска для кішки</h3>
+      <p>Ціна: 120 грн</p>
+      <button>Замовити</button>
+    </div>
+
+    <div class="card">
+      <img src="images/Stella.jpg" alt="Логотип на замовлення">
+      <h3>Стелла на замовлення</h3>
+      <p>Ціна: 300 грн</p>
+      <button>Замовити</button>
+    </div>
+
+    <div class="card">
+      <img src="images/Steath.jpg" alt="Фігурка Стіча 3D">
+      <h3>Фігурка Стіча 3D</h3>
+      <p>Ціна: 340 грн</p>
+      <button>Замовити</button>
+    </div>
+
+    <div class="card">
+      <img src="images/rose.jpg" alt="Підставка роза">
+      <h3>Підставка у вигляді рози</h3>
+      <p>Ціна: 80 грн</p>
+      <button>Замовити</button>
+    </div>
+
+    <div class="card">
+      <img src="images/pidstavka.jpg" alt="Підставка Чужого">
+      <h3>Підставка у вигляді Чужого</h3>
+      <p>Ціна: 300 грн</p>
+      <button>Замовити</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Ivan 3D Print</p>
+  </footer>
+
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Оформлення замовлення</h2>
+      <form id="orderForm">
+        <label for="name">Ваше ім'я:</label>
+        <input type="text" id="name" required placeholder="Введіть ім'я">
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" required placeholder="+380...">
+
+        <label for="comment">Коментар або відгук до виробу:</label>
+        <textarea id="comment" rows="4" placeholder="Ваші побажання, колір або відгук..."></textarea>
+
+        <button type="submit" class="submit-btn">Надіслати замовлення</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
