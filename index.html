@@ -3,29 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Три друга - Головна</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MyStore — Головна</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <img src="images/emblema.jpg" alt="Логотип Три друга" class="site-banner">
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="filterCategory('all')">MyStore</a>
+            
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" onclick="filterCategory('all')">Головна</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Категорії <span class="arrow">▾</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="filterCategory('kids')">Дитячі</a></li>
+                        <li><a href="#" onclick="filterCategory('adults')">Для дорослих</a></li>
+                        <li><a href="#" onclick="filterCategory('pets')">Для тварин</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html" class="active">Головна</a>
-        <a href="catalog.html">Каталог</a>
-    </nav>
+    <main class="main-content">
+        <h2 id="page-title" class="section-title">Усі Товари</h2>
+        <div class="search-box">
 
-    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px; text-align: center;">
-        <h2 style="font-size: 2rem; margin-bottom: 20px;">Втілюйте свої ідеї в пластиці!</h2>
-        <p style="font-size: 1.2rem; color: #cccccc; line-height: 1.6;">Вітаємо на нашому сайті! Ми займаємося якісним 3D-друком виробів під замовлення. Переходьте до каталогу, щоб переглянути роботи та зробити замовлення!</p>
-        <a href="catalog.html" style="display: inline-block; background-color: #00c6ff; color: #fff; text-decoration: none; padding: 12px 30px; border-radius: 25px; font-weight: bold; margin-top: 20px;">Перейти до каталогу 🚀</a>
-    </main>
+    <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Пошук товарів..." 
+        oninput="searchProducts()"
+    >
+</div>
 
-    <footer>
-        <p>&copy; 2026 Три друга</p>
+    <div class="products-grid">
+
+    <div class="product-card" data-category="kids">
+        <div class="product-image-box">
+            <img src="images/product1.jpg" alt="Маска для кішки" class="product-img">
+        </div>
+        <span class="category-badge">Дитячі</span>
+        <h3>Маска для кішки</h3>
+        <p class="description">Опис товару</p>
+        <p class="price">1200 грн</p>
+        <a href="https://wa.me/380XXXXXXXXX?text=Привіт!%20Я%20хочу%20замовити%20Маска%20для%20кішки" target="_blank" class="btn">Купити у WhatsApp</a>
+    </div>
+
+    <div class="product-card" data-category="kids">
+        <div class="product-image-box">
+            <img src="images/product2.jpg" alt="роза (прикраса)" class="product-img">
+        </div>
+        <span class="category-badge">Дитячі</span>
+        <h3>роза (прикраса)</h3>
+        <p class="description">Опис товару</p>
+        <p class="price">1500 грн</p>
+        <a href="https://wa.me/380XXXXXXXXX?text=Привіт!%20Я%20хочу%20замовити%20роза%20(прикраса)" target="_blank" class="btn">Купити у WhatsApp</a>
+    </div>
+
+    <div class="product-card" data-category="adults">
+        <div class="product-image-box">
+            <img src="images/product3.jpg" alt="підставка стіч" class="product-img">
+        </div>
+        <span class="category-badge">Для дорослих</span>
+        <h3>підставка стіч</h3>
+        <p class="description">Опис товару</p>
+        <p class="price">2200 грн</p>
+        <a href="https://wa.me/380XXXXXXXXX?text=Привіт!%20Я%20хочу%20замовити%20підставка%20стіч" target="_blank" class="btn">Купити у WhatsApp</a>
+    </div>
+
+    <div class="product-card" data-category="adults">
+        <div class="product-image-box">
+            <img src="images/product4.jpg" alt="підставка (чужий)" class="product-img">
+        </div>
+        <span class="category-badge">Для дорослих</span>
+        <h3>підставка (чужий)</h3>
+        <p class="description">Опис товару</p>
+        <p class="price">2800 грн</p>
+        <a href="https://wa.me/380XXXXXXXXX?text=Привіт!%20Я%20хочу%20замовити%20підставка%20(чужий)" target="_blank" class="btn">Купити у WhatsApp</a>
+    </div>
+
+    <div class="product-card" data-category="pets">
+        <div class="product-image-box">
+            <img src="images/product5.jpg" alt="стелла Чаплинка" class="product-img">
+        </div>
+        <span class="category-badge">Для тварин</span>
+        <h3>стелла Чаплинка</h3>
+        <p class="description">Опис товару</p>
+        <p class="price">850 грн</p>
+        <a href="https://wa.me/380XXXXXXXXX?text=Привіт!%20Я%20хочу%20замовити%20стелла%20Чаплинка" target="_blank" class="btn">Купити у WhatsApp</a>
+    </div>
+
+    <div class="product-card" data-category="pets">
+        <div class="product-image-box">
+            <img src="images/product6.jpg" alt="стелла Чаплинка (сердечко)" class="product-img">
+        </div>
+        <span class="category-badge">Для тварин</span>
+        <h3>стелла Чаплинка (сердечко)</h3>
+        <p class="description">Опис товару</p>
+        <p class="price">1100 грн</p>
+        <a href="https://wa.me/380XXXXXXXXX?text=Привіт!%20Я%20хочу%20замовити%20стелла%20Чаплинка%20(сердечко)" target="_blank" class="btn">Купити у WhatsApp</a>
+    </div>
+
+</div>
+    <footer class="footer">
+        <p>&copy; 2026 Всі права захищені</p>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
