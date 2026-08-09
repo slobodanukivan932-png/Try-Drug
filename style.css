@@ -1,0 +1,62 @@
+/* Загальні налаштування сайту (Чорний фон) */
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Контейнер шапки */
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* Емблема над смужкою */
+.emblem-container {
+  margin-bottom: 15px;
+}
+
+.emblem-img {
+  max-width: 120px; /* Налаштуйте розмір під вашу картинку */
+  height: auto;
+  display: block;
+}
+
+/* Синя смужка з навігацією */
+.nav-bar {
+  width: 100%;
+  background-color: #000000;
+  border-top: 2px solid #0066ff;    /* Синя лінія зверху */
+  border-bottom: 2px solid #0066ff; /* Синя лінія знизу */
+  box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); /* Легке синє сяйво */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* Кнопки всередині смужки */
+.nav-links {
+  display: flex;
+  gap: 30px; /* Відстань між кнопками */
+}
+
+.nav-button {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Ефект при наведенні на кнопки */
+.nav-button:hover {
+  background-color: #0066ff;
+  color: #ffffff;
+  box-shadow: 0 0 8px #0066ff;
+}
