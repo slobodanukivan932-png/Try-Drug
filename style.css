@@ -60,3 +60,124 @@ body {
   color: #ffffff;
   box-shadow: 0 0 8px #0066ff;
 }
+
+/* Додай у кінець style.css */
+.btn {
+  background-color: #007bff !important; /* Яскраво-синій колір */
+  color: white !important;              /* Білий текст */
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  display: inline-block !important;
+  width: auto !important;               /* Не розтягує кнопку на всю ширину */
+}
+
+.btn:hover {
+  background-color: #0056b3 !important; /* Темніший синій при наведенні */
+}
+
+/* Додай в кінець style.css */
+.product-card {
+  height: auto !important; /* Прибирає розтягування гумою */
+}
+
+.product-card .price {
+  float: left;
+  margin: 0;
+  line-height: 35px;
+}
+
+.product-card .btn {
+  float: right;
+}
+
+/* Очищення після плаваючих елементів */
+.product-card::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Додай у кінець style.css */
+.card-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-top: auto !important;
+  padding-top: 10px !important;
+}
+
+.card-footer .buy-btn {
+  background-color: #0088ff !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-weight: bold !important;
+}
+
+/* 1. Робимо ціну яскраво-синьою, як у верхніх картках */
+.product-card .price {
+  color: #0088ff !important;
+  font-weight: bold !important;
+}
+
+/* 2. Фіксуємо блок з ціною та кнопкою в самому низу картки */
+.card-footer {
+  margin-top: auto !important; /* Притискає до дна картки */
+  width: 100% !important;
+}
+
+/* Блок-контейнер для пошуку */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 500px;
+  width: 90%;
+}
+
+/* Стиль самого поля пошуку */
+#searchInput {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+  background-color: #1a1a2e; /* Темний фон під стиль сайту */
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#searchInput::placeholder {
+  color: #a0a0a0;
+}
+
+#searchInput:focus {
+  border-color: #00a2ff;
+  box-shadow: 0 0 12px rgba(0, 162, 255, 0.5);
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 20px 0; /* Додає комфортний відступ зверху та знизу */
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 450px;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #111827; /* Гарний темно-сірий/синій колір */
+  border: 2px solid #007bff;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,6 +36,29 @@
       object-fit: contain;
     }
 
+    .search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px 18px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  border: 2px solid #007bff;
+  border-radius: 20px;
+  outline: none;
+}
+
+#searchInput::placeholder {
+  color: #888888;
+}
+
     .nav-bar {
       width: 100%;
       background-color: #000000;
@@ -67,7 +91,8 @@
       transition: all 0.3s ease;
     }
 
-    .filter-btn:hover, .filter-btn.active {
+    .filter-btn:hover,
+    .filter-btn.active {
       background-color: #0066ff;
       box-shadow: 0 0 8px #0066ff;
     }
@@ -94,8 +119,10 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+
     .product-card.hide {
-      display: none; /* Ховаємо картки при фільтрації */
+      display: none;
+      /* Ховаємо картки при фільтрації */
     }
 
     .product-card:hover {
@@ -168,14 +195,27 @@
       background-color: #0044cc;
     }
   </style>
+  </style>
+
 </head>
+
 <body>
 
   <header class="main-header">
+
     <div class="emblem-container">
       <img src="images/emblemma.jpg" alt="Емблема" class="emblem-img">
     </div>
 
+<div class="search-container">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="🔍 Пошук товарів..." 
+    onkeyup="filterProducts()"
+  >
+</div>
+    
     <nav class="nav-bar">
       <div class="filter-buttons">
         <button class="filter-btn active" onclick="filterProducts('all')">Усі товари</button>
@@ -194,47 +234,62 @@
     <div class="products-grid">
 
       <div class="product-card" data-category="dragons">
-        <div class="product-image-container"><img src="images/product1.jpg" alt="Фігурка Стіч" class="product-img"></div>
+        <div class="product-image-container"><img src="images/product1.jpg" alt="Фігурка Стіч" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">Фігурка «Стіч»</h2>
           <p class="product-description">Яскрава та деталізована 3D-фігурка популярного персонажа Стіча.</p>
-          <div class="product-bottom"><span class="product-price">340 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Фігурку%20Стіч" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">340 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Фігурку%20Стіч" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="decor">
-        <div class="product-image-container"><img src="images/product2.jpg" alt="Декоративна Троянда" class="product-img"></div>
+        <div class="product-image-container"><img src="images/product2.jpg" alt="Декоративна Троянда"
+            class="product-img"></div>
         <div class="product-info">
           <h2 class="product-title">Декоративна Троянда</h2>
           <p class="product-description">Витончена 3D-модель троянди на підставці.</p>
-          <div class="product-bottom"><span class="product-price">80 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Декоративну%20Троянду" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">80 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Декоративну%20Троянду"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="accessories">
-        <div class="product-image-container"><img src="images/product3.jpg" alt="Маска для кішки" class="product-img"></div>
+        <div class="product-image-container"><img src="images/product3.jpg" alt="Маска для кішки" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">Маска для кішки</h2>
           <p class="product-description">Оригінальна та кумедна маска для вашого улюбленця.</p>
-          <div class="product-bottom"><span class="product-price">120 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Маску%20для%20кішки" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">120 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Маску%20для%20кішки"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="accessories">
-        <div class="product-image-container"><img src="images/product4.jpg" alt="Підставка для телефону Чужий" class="product-img"></div>
+        <div class="product-image-container"><img src="images/product4.jpg" alt="Підставка для телефону Чужий"
+            class="product-img"></div>
         <div class="product-info">
           <h2 class="product-title">Підставка для телефону «Чужий»</h2>
           <p class="product-description">Крута підставка для смартфона у вигляді Лицехопа з всесвіту «Чужий».</p>
-          <div class="product-bottom"><span class="product-price">650 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Підставку%20Чужий" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">650 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Підставку%20Чужий"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="souvenirs">
-        <div class="product-image-container"><img src="images/product5.jpg" alt="Стела Чаплинка" class="product-img"></div>
+        <div class="product-image-container"><img src="images/product5.jpg" alt="Стела Чаплинка" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">Сувенірна стела «Я ❤️ Чаплинка»</h2>
           <p class="product-description">Патріотична сувенірна підставка з символікою та квітами.</p>
-          <div class="product-bottom"><span class="product-price">500 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Стелу%20Чаплинка" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">500 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Стелу%20Чаплинка" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -243,25 +298,33 @@
         <div class="product-info">
           <h2 class="product-title">Сувенірна табличка</h2>
           <p class="product-description">Унікальний 3D-елемент декору з високою точністю деталізації.</p>
-          <div class="product-bottom"><span class="product-price">150 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Сувенірну%20табличку" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">150 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Сувенірну%20табличку"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="accessories">
-        <div class="product-image-container"><img src="images/2.jpg" alt="брелочки (сердечко)" class="product-img"></div>
+        <div class="product-image-container"><img src="images/2.jpg" alt="брелочки (сердечко)" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">брелочки (сердечко)</h2>
           <p class="product-description">Зручна та стильна підставка з міцного PLA-пластику.</p>
-          <div class="product-bottom"><span class="product-price">200 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Декоративну%20підставку" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">200 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Декоративну%20підставку"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="dragons">
-        <div class="product-image-container"><img src="images/3.jpg" alt="котик з наповненням" class="product-img"></div>
+        <div class="product-image-container"><img src="images/3.jpg" alt="котик з наповненням" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">котик з наповненням</h2>
           <p class="product-description">Популярна 3D-іграшка з рухомими елементами.</p>
-          <div class="product-bottom"><span class="product-price">180 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Гнучкого%20дракончика" target="_button" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">180 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Гнучкого%20дракончика"
+              target="_button" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -270,7 +333,9 @@
         <div class="product-info">
           <h2 class="product-title">Дизайнерська Годівничка для котів і собак</h2>
           <p class="product-description">Міцна та всепогодна годівничка для саду чи балкона.</p>
-          <div class="product-bottom"><span class="product-price">1100 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Годівничку" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">1100 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Годівничку" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -279,25 +344,33 @@
         <div class="product-info">
           <h2 class="product-title">Набір милих Восьминогів</h2>
           <p class="product-description">Барвисті та яскраві 3D-восьминоги для робочого столу.</p>
-          <div class="product-bottom"><span class="product-price">250 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Восьминогів" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">250 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Восьминогів" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="accessories">
-        <div class="product-image-container"><img src="images/6.jpg" alt="Скринька з секретом" class="product-img"></div>
+        <div class="product-image-container"><img src="images/6.jpg" alt="Скринька з секретом" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">Скринька з секретом / Органайзер</h2>
           <p class="product-description">Стильний настільний органайзер із механічною деталлю.</p>
-          <div class="product-bottom"><span class="product-price">400 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Скриньку" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">400 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Скриньку" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
       <div class="product-card" data-category="dragons">
-        <div class="product-image-container"><img src="images/7.jpg" alt="Дракон різно кольоровий" class="product-img"></div>
+        <div class="product-image-container"><img src="images/7.jpg" alt="Дракон різно кольоровий" class="product-img">
+        </div>
         <div class="product-info">
           <h2 class="product-title">Різнокольоровий гнучкий Дракон</h2>
           <p class="product-description">Яскравий рухомий дракон із градієнтною зміною кольорів.</p>
-          <div class="product-bottom"><span class="product-price">250 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Різнокольорового%20дракона" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">250 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Різнокольорового%20дракона"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -306,7 +379,9 @@
         <div class="product-info">
           <h2 class="product-title">Сувенірна стела «Богуслав»</h2>
           <p class="product-description">Патріотична пам'ятна підставка міста Богуслав.</p>
-          <div class="product-bottom"><span class="product-price">400 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Стелу%20Богуслав" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">400 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Стелу%20Богуслав" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -315,7 +390,9 @@
         <div class="product-info">
           <h2 class="product-title">Білий Дракончик у окулярах</h2>
           <p class="product-description">Мила фігурка білого дракончика в стильних окулярах.</p>
-          <div class="product-bottom"><span class="product-price">120 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Білого%20дракончика" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">120 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Білого%20дракончика"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -324,7 +401,9 @@
         <div class="product-info">
           <h2 class="product-title">Інтерактивний Брелок-Гра</h2>
           <p class="product-description">Компактний та стильний брелок у формі ігрового аксесуара.</p>
-          <div class="product-bottom"><span class="product-price">120 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Брелок%20гру" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">120 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Брелок%20гру" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -333,7 +412,9 @@
         <div class="product-info">
           <h2 class="product-title">Декоративна Медуза (Silk-ефект)</h2>
           <p class="product-description">Витончена фігурка з ефектом порцеляни та шовковим відблиском.</p>
-          <div class="product-bottom"><span class="product-price">350 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Медузу" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">350 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Медузу" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -342,7 +423,9 @@
         <div class="product-info">
           <h2 class="product-title">3D Світильник «Місяць»</h2>
           <p class="product-description">Атмосферний нічник із текстурою поверхні Місяця.</p>
-          <div class="product-bottom"><span class="product-price">350 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Світильник%20Луна" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">350 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Світильник%20Луна"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -351,7 +434,9 @@
         <div class="product-info">
           <h2 class="product-title">Символічна статуетка «Сім'я»</h2>
           <p class="product-description">Тепла та душевна скульптура, що символізує сімейні цінності.</p>
-          <div class="product-bottom"><span class="product-price">250 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Статуетку%20сім'ї" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">250 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Статуетку%20сім'ї"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -360,7 +445,9 @@
         <div class="product-info">
           <h2 class="product-title">Настінна ключниця / вішак</h2>
           <p class="product-description">Оригінальний органайзер для ключів у передпокій.</p>
-          <div class="product-bottom"><span class="product-price">560 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Вішалку%20для%20ключів" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">560 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Вішалку%20для%20ключів"
+              target="_blank" class="buy-button">Замовити</a></div>
         </div>
       </div>
 
@@ -369,12 +456,57 @@
         <div class="product-info">
           <h2 class="product-title">Колекційні Шахи (фігурки)</h2>
           <p class="product-description">Повний комплект деталізованих шахових фігур.</p>
-          <div class="product-bottom"><span class="product-price">900 грн</span><a href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Шахи" target="_blank" class="buy-button">Замовити</a></div>
+          <div class="product-bottom"><span class="product-price">900 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20Шахи" target="_blank"
+              class="buy-button">Замовити</a></div>
         </div>
       </div>
+      
+<div class="product-card" data-category="home" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+  <div>
+    <img src="images/17.jpg" alt="Душ для лапок" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+    <h3>Зручний душ для миття лапок після прогулянки.</h3>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px;">
+    <span style="color: #1d4ed8; font-weight: bold; font-size: 18px;">150 грн</span>
+    <button class="btn" onclick="window.open('https://wa.me/38050533098?text=' + encodeURIComponent('Привіт! Я хочу замовити: Душ для лапок (150 грн)'), '_blank')" style="background-color: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Замовити</button>
+  </div>
+</div>
 
-    </div>
-  </main>
+<div class="product-card" data-category="pets" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+  <div>
+    <img src="images/18.jpg" alt="М'ячик з наповненням" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+    <h3>М'ячик з наповненням для котів та собак</h3>
+    <p>Оригінальна іграшка з наповненням.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px;">
+    <span style="color: #1d4ed8; font-weight: bold; font-size: 18px;">50 грн</span>
+    <button class="btn" onclick="window.open('https://wa.me/38050533098?text=' + encodeURIComponent('Привіт! Я хочу замовити: М\'ячик з наповненням (50 грн)'), '_blank')" style="background-color: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Замовити</button>
+  </div>
+</div>
+
+<div class="product-card" data-category="pets" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+  <div>
+    <img src="images/19.jpg" alt="М'ячик у спіралі" style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px;">
+    <h3>М'ячик всередині спіралі для котів</h3>
+    <p>Захоплююча іграшка-спіраль.</p>
+  </div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 15px;">
+    <span style="color: #1d4ed8; font-weight: bold; font-size: 18px;">135 грн</span>
+    <button class="btn" onclick="window.open('https://wa.me/38050533098?text=' + encodeURIComponent('Привіт! Я хочу замовити: М\'ячик всередині спіралі (135 грн)'), '_blank')" style="background-color: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">Замовити</button>
+  </div>
+</div>
+      <div class="product-card" data-category="accessories">
+        <div class="product-image-container"><img src="images/16.jpg" alt="фаркоп" class="product-img"></div>
+        <div class="product-info">
+          <h2 class="product-title">ковпаки на фаркоп</h2>
+          <p class="product-description">Оригінальний.</p>
+          <div class="product-bottom"><span class="product-price">180 грн</span><a
+              href="https://wa.me/380505330098?text=Доброго%20дня!%20Хочу%20замовити%20ковпаки%20на%20фаркоп"
+              target="_blank" class="buy-button">Замовити</a></div>
+            </div>
+          </div>
+      </main>
 
   <script>
     function filterProducts(category) {
@@ -414,4 +546,5 @@
   </script>
 
 </body>
-</html> 
+
+</html>
